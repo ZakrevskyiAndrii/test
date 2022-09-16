@@ -38,9 +38,7 @@ jobs:
       run: npm test -- --coverage
 
     - name: run cypress tests with firefox
-    - uses: cypress-io/github-action@v4
-      with:
-        browser: chrome
+      uses: cypress-io/github-action@v4
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3.1.0
