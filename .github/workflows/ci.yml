@@ -42,3 +42,9 @@ jobs:
 
     - name: Build
       run: npm run build
+
+    - name: run cypress tests with firefox
+      uses: cypress-io/github-action@v2
+      timeout-minutes: 10
+      with:
+          browser: firefox
