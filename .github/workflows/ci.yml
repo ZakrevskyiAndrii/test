@@ -49,6 +49,5 @@ jobs:
         SLACK_CHANNEL: fc-deployment-info
         SLACK_COLOR: ${{ job.status }}
         SLACK_ICON: https://github.com/rtCamp.png?size=48
-        SLACK_MESSAGE: 'Cheers'
-        SLACK_TITLE: ${{ github.event.pull_request.title }}
+        SLACK_TITLE: 'Commit Name: ${{ github.event.pull_request.title }}'
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
