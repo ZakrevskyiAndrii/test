@@ -15,7 +15,6 @@ jobs:
         uses: butlerlogic/action-autotag@stable
         with:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          root: "/package.json"
           tag_prefx: "v"
 
 
