@@ -21,6 +21,7 @@ function App() {
       </header>
       <Hello />
       <HelloYou />
+      <HelloYou />
     </div>
   );
 }
