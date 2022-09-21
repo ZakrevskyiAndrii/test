@@ -1,9 +1,9 @@
-name: "pre-release"
+name: "release"
 
 on:
   push:
     branches:
-      - "prod"
+      - "main"
 
 jobs:
   pre-release:
@@ -11,12 +11,15 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Tag with version from package.json
+        uses: butlerlogic/action-autotag@stable
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Release notes"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          tag_prefx: "v"
+
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
