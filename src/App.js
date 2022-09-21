@@ -49,7 +49,7 @@ function App() {
       </header>
       <Hello />
       <HelloYou />
-      <LessText />
+      <LessText text="hello" maxLength={3} />
     </div>
   );
 }
