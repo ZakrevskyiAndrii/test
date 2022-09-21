@@ -1,6 +1,8 @@
 import './App.css';
 import logo from './logo.svg';
 
+const Hello = () => <p>Hello you</p>;
+
 function App() {
   return (
     <div className="App">
@@ -16,6 +18,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Hello />
     </div>
   );
 }
