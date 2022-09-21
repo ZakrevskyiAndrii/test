@@ -2,6 +2,7 @@ import './App.css';
 import logo from './logo.svg';
 
 const Hello = () => <p>Hello you</p>;
+const HelloYou = () => <p>Hello you</p>;
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         </a>
       </header>
       <Hello />
+      <HelloYou />
     </div>
   );
 }
