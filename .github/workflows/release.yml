@@ -12,10 +12,12 @@ jobs:
 
     steps:
       - name: Tag with version from package.json
-        uses: butlerlogic/action-autotag@master
+        uses: butlerlogic/action-autotag@1.0.0
         with:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          root: "../../package.json"
           tag_prefx: "v"
+
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
