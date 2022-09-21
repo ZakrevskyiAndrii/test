@@ -1,0 +1,27 @@
+name: "pre-release"
+
+on:
+  push:
+    branches:
+      - "prod"
+
+jobs:
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: Klemensas/action-autotag@stable
+        with:
+           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+           tag_prefix: "v"
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: fc-deployment-info
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: 'FRONTEND RELEASE'
+          SLACK_TITLE: 'a new release has been made'
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
