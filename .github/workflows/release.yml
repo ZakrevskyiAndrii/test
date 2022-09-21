@@ -1,9 +1,9 @@
-name: "pre-release"
+name: "release"
 
 on:
   push:
     branches:
-      - "prod"
+      - "main"
 
 jobs:
   pre-release:
@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Tag with version from package.json
-        uses: butlerlogic/action-autotag@1.0.0
+        uses: butlerlogic/action-autotag@stable
         with:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          root: "../../package.json"
+          root: "/package.json"
           tag_prefx: "v"
 
 
