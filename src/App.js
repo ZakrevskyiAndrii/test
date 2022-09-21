@@ -50,7 +50,7 @@ function App() {
       <Hello />
       <HelloYou />
       <LessText text="hello" maxLength={3} />
-      {true && <p>Another test</p>}
+      {true && <p>Another test АРРАРАР</p>}
     </div>
   );
 }
